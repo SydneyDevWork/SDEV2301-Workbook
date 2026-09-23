@@ -19,9 +19,10 @@ class Program
         double cups = 0;
         Console.Write("Enter the number of cups: ");
         // cups = double.Parse(Console.ReadLine() ?? "");
-        while (!double.TryParse(Console.ReadLine(), out cups))
+        while (!double.TryParse(Console.ReadLine(), out cups) || cups < 0)
         {
-            Console.WriteLine("Invalid input, not a number Try again");
+            Console.WriteLine("Invalid input, Enter a valid number: ");
+            Console.Write("Enter the number of cups: ");
         }
         return cups;
     }
